@@ -1,4 +1,5 @@
 import { GlobalThemeWrapper } from '@/lib/globalTheme';
+import { ReactQueryProvider } from '@/lib/reactQueryProvider';
 import StyledComponentsRegistry from '@/lib/registry';
 import type { Metadata } from 'next';
 
@@ -14,14 +15,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body>
-        <StyledComponentsRegistry>
-          <GlobalThemeWrapper>
-            {children}
-          </GlobalThemeWrapper>
-        </StyledComponentsRegistry>
-      </body>
-    </html>
+    <ReactQueryProvider>
+      <StyledComponentsRegistry>
+        <GlobalThemeWrapper>
+          <html lang='en'>
+            <body>
+              {children}
+            </body>
+          </html>
+        </GlobalThemeWrapper>
+      </StyledComponentsRegistry>
+    </ReactQueryProvider>
   );
 }
