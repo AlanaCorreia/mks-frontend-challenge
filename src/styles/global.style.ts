@@ -1,12 +1,9 @@
 'use client';
 
 import { createGlobalStyle } from 'styled-components';
-import { Montserrat } from 'next/font/google';
-
-const montserrat = Montserrat({ subsets: ['latin'] });
-
 
 export const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
   * {
     box-sizing: border-box;
     margin: 0;
@@ -14,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: ${montserrat}, sans-serif;
+    font-family: Montserrat, sans-serif;
     font-size: 1em;
   }
 `;
