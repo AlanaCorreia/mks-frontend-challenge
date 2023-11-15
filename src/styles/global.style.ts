@@ -12,6 +12,5 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: Montserrat, sans-serif;
-    font-size: 1em;
   }
 `;

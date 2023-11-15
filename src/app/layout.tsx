@@ -1,5 +1,6 @@
 import { GlobalThemeWrapper } from '@/lib/globalTheme';
 import { ReactQueryProvider } from '@/lib/reactQueryProvider';
+import { ReduxProvider } from '@/lib/reduxProvider';
 import StyledComponentsRegistry from '@/lib/registry';
 import type { Metadata } from 'next';
 
@@ -19,9 +20,11 @@ export default function RootLayout({
       <StyledComponentsRegistry>
         <GlobalThemeWrapper>
           <html lang='en'>
-            <body>
-              {children}
-            </body>
+            <ReduxProvider>
+              <body>
+                {children}
+              </body>
+            </ReduxProvider>
           </html>
         </GlobalThemeWrapper>
       </StyledComponentsRegistry>

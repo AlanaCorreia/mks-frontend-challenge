@@ -1,11 +1,21 @@
+'use client';
+
 import Image from 'next/image';
 import { Button } from './cartButton.style';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store/store';
 
-export default function CartButton() {
+type Props = {
+  toggle: () => void;
+}
+
+export default function CartButton({toggle}: Props) {
+  const counter = useSelector((state: RootState) => state.cart);
+
   return (
-    <Button>
+    <Button onClick={toggle}>
       <Image src={'/vector.svg'} alt={'cart'} width={19} height={18} />
-      <p>0</p>
+      <p>{(counter.length === 0) ? 0 : counter.length}</p>
     </Button>
   );
 }

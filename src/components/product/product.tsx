@@ -11,7 +11,6 @@ export default function Product() {
   const { data, error, isLoading } = GetProducts();
   
   if (isLoading) return <p>carregando</p>;
-  console.log(data.products);
 
   if (error) return <p>Erro na requisição</p>;
 
